@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/it_dbdh"
+    app:startDestination="@id/ZHYQFragment2">
+
+    <fragment
+        android:id="@+id/ZHYQFragment2"
+        android:name="com.example.go1.dh.ZHYQFragment"
+        android:label="fragment_z_h_y_q"
+        tools:layout="@layout/fragment_z_h_y_q" />
+    <fragment
+        android:id="@+id/GOODESFragment2"
+        android:name="com.example.go1.dh.GOODESFragment"
+        android:label="fragment_g_o_o_d_e_s"
+        tools:layout="@layout/fragment_g_o_o_d_e_s" />
+    <fragment
+        android:id="@+id/NEWSFragment2"
+        android:name="com.example.go1.dh.NEWSFragment"
+        android:label="fragment_n_e_w_s"
+        tools:layout="@layout/fragment_n_e_w_s" />
+    <fragment
+        android:id="@+id/VIDEOFragment2"
+        android:name="com.example.go1.dh.VIDEOFragment"
+        android:label="fragment_v_i_d_e_o"
+        tools:layout="@layout/fragment_v_i_d_e_o" />
+    <fragment
+        android:id="@+id/WDFragment"
+        android:name="com.example.go1.dh.WDFragment"
+        android:label="fragment_w_d"
+        tools:layout="@layout/fragment_w_d" />
+</navigation>

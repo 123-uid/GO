@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/ZHYQFragment2" android:icon="@drawable/baseline_apps_fl" android:title="智慧园区"/>
+    <item android:id="@+id/GOODESFragment2" android:icon="@drawable/baseline_shopping_cart_gwc" android:title="购物车"/>
+    <item android:id="@+id/NEWSFragment2" android:icon="@drawable/baseline_newspaper_xwb" android:title="新闻"/>
+    <item android:id="@+id/VIDEOFragment2" android:icon="@drawable/baseline_photo_camera_front_zb1" android:title="视频"/>
+    <item android:id="@+id/WDFragment" android:icon="@drawable/baseline_account_circle_wd" android:title="我的"/>
+</menu>
