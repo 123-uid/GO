@@ -38,7 +38,6 @@ class RetrofitUlits {
             return  retrofit2
         }
 
-
         fun retrofit3():Retrofit{
             val okHttpClient3 = OkHttpClient.Builder().build()
 

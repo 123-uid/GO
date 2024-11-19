@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".repair.RepairADDActivity">
+        <LinearLayout
+            android:background="#2196F3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/fh"
+                android:src="@drawable/baseline_arrow_back_fh"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="添加维修"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/tv_id"
+            android:hint="维修id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+          <EditText
+            android:id="@+id/tv_sj"
+              android:hint="维修时间"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+          <EditText
+            android:id="@+id/tv_xq"
+              android:hint="维修详情"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+          <EditText
+            android:id="@+id/tv_name"
+              android:hint="维修人员"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/bt"
+            android:text="添加维修"
+            android:layout_marginTop="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

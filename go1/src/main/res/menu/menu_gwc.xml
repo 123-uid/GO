@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/HOMEFragment" android:icon="@drawable/baseline_home_sy" android:title="首页"/>
+    <item android:id="@+id/FLFragment" android:icon="@drawable/baseline_auto_awesome_mosaic_wx" android:title="分类"/>
+    <item android:id="@+id/GWCFragment" android:icon="@drawable/baseline_local_grocery_store_gwc" android:title="购物车"/>
+</menu>

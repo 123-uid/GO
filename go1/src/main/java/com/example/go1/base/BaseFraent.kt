@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 
 abstract class BaseFraent<V:ViewDataBinding>:Fragment() {
 
+
     protected lateinit var vie:V
 
 

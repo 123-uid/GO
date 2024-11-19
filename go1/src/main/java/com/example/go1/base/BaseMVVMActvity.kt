@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 
 abstract class BaseMVVMActvity<V:ViewDataBinding,M:ViewModel>:AppCompatActivity() {
 
+
+
     protected lateinit var mode:M
     protected lateinit var vie:V
 

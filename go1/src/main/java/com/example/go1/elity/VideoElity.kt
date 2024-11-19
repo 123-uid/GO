@@ -1,5 +1,9 @@
 package com.example.go1.elity
 
+
+import com.chad.library.adapter.base.entity.MultiItemEntity
+
+
 data class VideoElity(
     val code: Int,
     val `data`: List<VideoData>,
@@ -39,4 +43,7 @@ data class VideoData(
     val videopath: String,
     val videotypeid: Int,
     val year: String
-)
+) : MultiItemEntity{
+    override val itemType : Int
+    get() = videotypeid
+}

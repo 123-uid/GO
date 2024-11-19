@@ -17,6 +17,69 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GO">
         <activity
+            android:name=".play.PayCZActivity"
+            android:exported="false" />
+        <activity
+            android:name=".newstay.NewsTayMutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".newstay.NewsTayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.PaySBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.PayCGActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.PayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".goodes.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".goodes.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".department.DepartmentADDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".department.DepartmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".repair.RepairADDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".repair.RepairActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patroles.PatrplesADDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patroles.PatrplesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".visitor.VisitorADDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".visitor.VisitorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parking.ParkingADDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parking.ParkingVRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parking.ParkingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sing.YdSingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sing.SingActivity"
+            android:exported="false" />
+        <activity
             android:name=".news.NewsAddActivity"
             android:exported="false" />
         <activity

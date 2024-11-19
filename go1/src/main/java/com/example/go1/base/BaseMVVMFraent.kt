@@ -18,7 +18,7 @@ abstract class BaseMVVMFraent<V:ViewDataBinding,M:ViewModel>:Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-         super.onCreateView(inflater, container, savedInstanceState)
+//         super.onCreateView(inflater, container, savedInstanceState)
         vie = DataBindingUtil.inflate(inflater,getLyout(), container, false)
         mode= ViewModelProvider(this)[getBaset()]
         initView()
@@ -33,4 +33,5 @@ abstract class BaseMVVMFraent<V:ViewDataBinding,M:ViewModel>:Fragment() {
     abstract fun initView()
 
     abstract fun initData()
+
 }
