@@ -46,8 +46,8 @@ android {
 }
 
 dependencies {
-
-
+    implementation files('libs//alipaysdk-15.8.05.211018174351.aar')
+    implementation 'com.google.vr:sdk-panowidget:1.40.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     def roomVersion = "2.4.3"

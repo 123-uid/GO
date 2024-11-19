@@ -33,4 +33,5 @@ abstract class BaseMVVMFraent<V:ViewDataBinding,M:ViewModel>:Fragment() {
     abstract fun initView()
 
     abstract fun initData()
+
 }

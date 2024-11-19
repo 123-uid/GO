@@ -1,60 +1,80 @@
 package com.example.go1.dh
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.go1.R
+import com.example.go1.adaptert.RJAdaptert
+import com.example.go1.adaptert.SJAdaptert
+import com.example.go1.adaptert.YJAdaptert
+import com.example.go1.base.BaseMVVMFraent
+import com.example.go1.databinding.FragmentFLBinding
+import com.example.go1.goodes.DetailActivity
+import com.example.go1.goodes.GoodesViewModel
+import com.uuzuche.lib_zxing.decoding.Intents
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class FLFragment : BaseMVVMFraent<FragmentFLBinding,GoodesViewModel>() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FLFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FLFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var yjAdaptert: YJAdaptert
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    lateinit var rjAdaptert: RJAdaptert
+
+    lateinit var sjAdaptert: SJAdaptert
+
+    override fun getLyout(): Int =R.layout.fragment_f_l
+
+    override fun getBaset(): Class<GoodesViewModel> = GoodesViewModel::class.java
+
+    override fun initView() {
+         mode.yj()
+         mode.rj()
+         mode.sj()
+
+        yjAdaptert = YJAdaptert()
+        vie.yj.layoutManager= LinearLayoutManager(context)
+        vie.yj.adapter=yjAdaptert
+
+        rjAdaptert = RJAdaptert()
+        vie.rj.layoutManager= GridLayoutManager(context,4)
+        vie.rj.adapter=rjAdaptert
+
+        sjAdaptert = SJAdaptert()
+        vie.sj.layoutManager= GridLayoutManager(context,2)
+        vie.sj.adapter=sjAdaptert
+        sjAdaptert.setOnItemClickListener { adapter, view, position ->
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("id", sjAdaptert.data[position])
+            startActivity(intent)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_f_l, container, false)
+    override fun initData() {
+         mode.ycg.observe(this){
+             if (it.code==200){
+                 yjAdaptert.data.clear()
+                 yjAdaptert.data.addAll(it.data)
+                 yjAdaptert.notifyDataSetChanged()
+             }
+         }
+        mode.rcg.observe(this){
+            if (it.code==200){
+                rjAdaptert.data.clear()
+                rjAdaptert.data.addAll(it.data)
+                rjAdaptert.notifyDataSetChanged()
+            }
+        }
+        mode.jcg.observe(this){
+            if (it.code==200){
+                sjAdaptert.data.clear()
+                sjAdaptert.data.addAll(it.data)
+                sjAdaptert.notifyDataSetChanged()
+            }
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FLFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FLFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

@@ -1,60 +1,76 @@
 package com.example.go1.dh
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.go1.R
+import com.example.go1.adaptert.GWCAdaptert
+import com.example.go1.base.BaseFraent
+import com.example.go1.base.BaseMVVMFraent
+import com.example.go1.databinding.FragmentGWCBinding
+import com.example.go1.elity.DetailElity
+import com.example.go1.goodes.GoodesViewModel
+import com.example.go1.play.PayActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GWCFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class GWCFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class GWCFragment : BaseMVVMFraent<FragmentGWCBinding,GoodesViewModel>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    lateinit var gwcAdaptert: GWCAdaptert
+
+    var list = mutableListOf<DetailElity.DataDTO>()
+
+    override fun getLyout(): Int =R.layout.fragment_g_w_c
+    override fun getBaset(): Class<GoodesViewModel> = GoodesViewModel::class.java
+    override fun initView() {
+           mode.gwc()
+          gwcAdaptert= GWCAdaptert(list)
+          vie.rv.layoutManager= LinearLayoutManager(context)
+          vie.rv.adapter=gwcAdaptert
+          vie.zf.setOnClickListener {
+              startActivity(Intent(context, PayActivity::class.java))
+          }
+
+
+    }
+
+    override fun initData() {
+        mode.ccg.observe(this){
+            if (it.code==200){
+                list.clear()
+                list.addAll(listOf(it.data))
+                gwcAdaptert.notifyDataSetChanged()
+                vie.tvPrice.text="${it.data.goods_default_price}元"
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_g_w_c, container, false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GWCFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GWCFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
