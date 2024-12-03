@@ -2,10 +2,8 @@ package com.example.go1.ulits
 
 import com.example.go1.elity.BannerElity
 import com.example.go1.elity.CategoryElity
-import com.example.go1.elity.CommentElity
 import com.example.go1.elity.DepartmentElity
 import com.example.go1.elity.DetailElity
-import com.example.go1.elity.GiftElity
 import com.example.go1.elity.GoodesElity
 import com.example.go1.elity.NewsElity
 import com.example.go1.elity.NewsElityTay
@@ -83,10 +81,4 @@ interface Api {
 
     @GET(Conts.BASE_XWFL)
     fun fl():Observable<NewsElityType>
-
-    @GET(Conts.BASE_PL)
-    fun comment():Observable<CommentElity>
-
-    @GET(Conts.BASE_LW)
-    fun gift():Observable<GiftElity>
 }

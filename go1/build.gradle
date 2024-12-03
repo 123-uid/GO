@@ -46,18 +46,10 @@ android {
 }
 
 dependencies {
+
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation "com.google.dagger:hilt-android:2.44"
-    implementation files('libs//alipaysdk-15.8.05.211018174351.aar')
-    implementation 'com.google.vr:sdk-panowidget:1.40.0'
-    implementation files('libs\\umeng-common-2.1.0.jar')
-    implementation files('libs\\umeng-share-core-6.9.6.jar')
-    implementation files('libs\\umeng-share-QQ-simplify-6.9.6.jar')
-    implementation files('libs\\umeng-share-sina-simplify-6.9.6.jar')
-    implementation files('libs\\umeng-share-wechat-simplify-6.9.6.jar')
-    implementation files('libs\\umeng-shareboard-widget-6.9.6.jar')
-    implementation files('libs\\umeng-sharetool-6.9.6.jar')
     def roomVersion = "2.4.3"
     implementation "androidx.room:room-runtime:$roomVersion"
     annotationProcessor "androidx.room:room-compiler:$roomVersion"
@@ -65,10 +57,17 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$roomVersion"
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$roomVersion"
+    implementation 'com.tencent.liteav:LiteAVSDK_Smart:latest.release'
+    implementation 'com.android.support:cardview-v7:+'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'//flycotablayout
+    implementation 'com.blankj:utilcodex:1.30.6'
+    implementation ('com.alibaba:arouter-api:1.5.2')
     //ARouter依赖   //版本要改成最新版本
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2' //ARouter依赖
+    api 'com.blankj:utilcodex:1.30.6'
     //分包
     implementation 'com.android.support:multidex:1.0.3'
+//    implementation files('libs//alipaysdk-15.8.05.211018174351.aar')
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
     //RxJava依赖:主要用于消息传递
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'

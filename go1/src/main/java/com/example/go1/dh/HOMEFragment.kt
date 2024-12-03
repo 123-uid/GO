@@ -37,6 +37,7 @@ class HOMEFragment : BaseMVVMFraent<FragmentHOMEBinding,GoodesViewModel>() {
           vie.rv.layoutManager= GridLayoutManager(context,2)
           vie.rv.adapter=goodesAdaptert
           goodesAdaptert.setOnItemClickListener { adapter, view, position ->
+
               val intent = Intent(context, DetailActivity::class.java)
               intent.putExtra("id",goodesAdaptert.data[position])
               startActivity(intent)

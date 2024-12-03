@@ -39,7 +39,6 @@ object Conts {
     //评论
     const val BASE_PL="65a641b16330cd8519c907ad/com.bwhqk/pl"
 
-    //礼物
     const val BASE_LW="6679359af968da5ae49bcbfe/com/http/ws/lw"
 
 
